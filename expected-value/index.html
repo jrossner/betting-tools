@@ -20,7 +20,8 @@
         <input type="number" id="outcomeprob" name="outcomeprob" min="0" max="1" step=".01" value=".5">
         <br>
         <input type="submit" value="Calculate Expected Value">
-        <output name="result" for="res">20</output>
+        <label for="res">Expected Value: </label>
+        <output type="number" name="result" id="result" for="res"></output>
       </form>
       <
     </p>
@@ -40,7 +41,9 @@
         }
 
         expectedValue = (profitMultiple * winProb) - loseProb;
+        console.log('about to write');
         document.getElementById("result").value = Math.random();
+        console.log('written');
         if (expectedValue > 0) {
           alert(`You may have found a profitable bet!\n The Expected Value is +${math.Round(10000*expectedValue)/100}%`);
         } else {
