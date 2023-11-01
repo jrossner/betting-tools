@@ -21,7 +21,7 @@
         <br>
         <input type="submit" value="Calculate Expected Value">
         <br>
-        <label for="res">Expected Value: </label>
+        <label for="res"><b>Expected Value: </b></label>
         <output type="text" name="result" id="result" for="res"></output>
       </form>
     </p>
@@ -37,17 +37,17 @@
         if (betOdds >= 0) {
           profitMultiple = betOdds / 100;
         } else {
-          profitMultiple = -100 / betOdds;
+          profitMultiple = 100 / abs(betOdds);
         }
 
         expectedValue = (profitMultiple * winProb) - loseProb;
         let prettyResult;
         if (expectedValue >= 0) {
-          prettyResult = `+${Math.round(10000*expectedValue)/100}`
+          prettyResult = `+${Math.round(10000*expectedValue)/100}%`
         } else {
-          prettyResult = `${Math.round(10000*expectedValue)/100}`
+          prettyResult = `${Math.round(10000*expectedValue)/100}%`
         }
-        console.log(`about to write: ${prettyResult}`);
+
         document.getElementById("result").value = prettyResult;
       }
     </script>
