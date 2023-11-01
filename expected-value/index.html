@@ -16,13 +16,13 @@
         <label for="betodds">Betting Line: </label>
         <input type="number" id="betodds" name="betodds" min="-100000" max="10000000000" step="1" value="-110">
         <br>
-        <label for="outcomeprob">Probability of outcome (between 0 and 1) </label>
+        <label for="outcomeprob">Probability of outcome (between 0 and 1): </label>
         <input type="number" id="outcomeprob" name="outcomeprob" min="0" max="1" step=".01" value=".5">
         <br>
         <input type="submit" value="Calculate Expected Value">
         <br>
         <label for="res">Expected Value: </label>
-        <output type="number" name="result" id="result" for="res"></output>
+        <output type="text" name="result" id="result" for="res"></output>
       </form>
     </p>
     <script>
