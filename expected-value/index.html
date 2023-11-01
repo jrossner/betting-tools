@@ -41,7 +41,7 @@
         }
 
         expectedValue = (profitMultiple * winProb) - loseProb;
-        console.log('about to write');
+        console.log(`about to write: ${expectedValue}`);
         document.getElementById("result").value = Math.random();
         console.log('written');
         if (expectedValue > 0) {
