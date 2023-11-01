@@ -40,7 +40,7 @@
         }
 
         expectedValue = (profitMultiple * winProb) - loseProb;
-        document.getElementById("result").innerHTML = 5 + 6;
+        document.getElementById("result").value = Math.random();
         if (expectedValue > 0) {
           alert(`You may have found a profitable bet!\n The Expected Value is +${math.Round(10000*expectedValue)/100}%`);
         } else {
