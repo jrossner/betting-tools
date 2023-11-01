@@ -37,7 +37,7 @@
         if (betOdds >= 0) {
           profitMultiple = betOdds / 100;
         } else {
-          profitMultiple = 100 / abs(betOdds);
+          profitMultiple = 100 / Math.abs(betOdds);
         }
 
         expectedValue = (profitMultiple * winProb) - loseProb;
