@@ -23,7 +23,6 @@
         <label for="res">Expected Value: </label>
         <output type="number" name="result" id="result" for="res"></output>
       </form>
-      <
     </p>
     <script>
       function calcExpValue() {
@@ -44,11 +43,6 @@
         console.log(`about to write: ${expectedValue}`);
         document.getElementById("result").value = Math.random();
         console.log('written');
-        if (expectedValue > 0) {
-          alert(`You may have found a profitable bet!\n The Expected Value is +${math.Round(10000*expectedValue)/100}%`);
-        } else {
-          alert(`The Expected Value is ${math.Round(10000*expectedValue)/100}%`);
-        }
       }
     </script>
   </body>
