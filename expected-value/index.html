@@ -1,1 +1,48 @@
-this is the page that will host the expected value calculator
+<!doctype HTML>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1 style="text-align:center;">Expected Value Calculator</h1>
+    <p>
+      <h2>About</h2>
+      If you know the probability of an outcome, and the odds offered, you can calculate the expected return % on a bet with this calculator.
+      <br>
+    </p>
+    <p>
+      <h2>The Calculator</h2>
+      <form onsubmit="calcExpValue(); return false;">
+        <label for="betodds">Betting Line: </label>
+        <input type="number" id="betodds" name="betodds" min="-100000" max="10000000000" step="1" value="-110">
+        <br>
+        <label for="outcomeprob">Probability of outcome (between 0 and 1) </label>
+        <input type="number" id="outcomeprob" name="outcomeprob" min="0" max="1" step=".01" value=".5">
+        <br>
+        <input type="submit" value="Calculate Expected Value">
+      </form>
+    </p>
+    <script>
+      function calcExpValue() {
+        const betOdds = document.getElementById("betodds").value;
+        const winProb = document.getElementById("outcomeprob").value;
+
+        let expectedValue;
+        let loseProb = 1 - winProb;
+        let profitMultiple;
+        
+        if (betOdds >= 0) {
+          profitMultiple = betOdds / 100;
+        } else {
+          profitMultiple = -100 / betOdds;
+        }
+
+        expectedValue = (profitMultiple * winProb) - loseProb;
+  
+        if (expectedValue > 0) {
+          alert(`You may have found a profitable bet!\n The Expected Value is +${math.Round(10000*expectedValue)/100}%`);
+        } else {
+          alert(`The Expected Value is ${math.Round(10000*expectedValue)/100}%`);
+        }
+    </script>
+  </body>
+</html>
