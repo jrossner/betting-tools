@@ -47,8 +47,8 @@
         } else {
           prettyResult = `${Math.round(10000*expectedValue)/100}`
         }
-        console.log(`about to write: ${expectedValue}`);
-        document.getElementById("result").text = prettyResult;
+        console.log(`about to write: ${prettyResult}`);
+        document.getElementById("result").value = prettyResult;
       }
     </script>
   </body>
