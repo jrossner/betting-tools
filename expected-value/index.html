@@ -3,7 +3,7 @@
   <head>
   </head>
   <body>
-    <a href='./index.html'>Back Home</a>
+    <a href='../index.html'>Back Home</a>
     <h1 style="text-align:center;">Expected Value Calculator</h1>
     <p>
       <h2>About</h2>
@@ -20,6 +20,7 @@
         <input type="number" id="outcomeprob" name="outcomeprob" min="0" max="1" step=".01" value=".5">
         <br>
         <input type="submit" value="Calculate Expected Value">
+        <br>
         <label for="res">Expected Value: </label>
         <output type="number" name="result" id="result" for="res"></output>
       </form>
@@ -40,9 +41,14 @@
         }
 
         expectedValue = (profitMultiple * winProb) - loseProb;
+        let prettyResult;
+        if (expectedValue >= 0) {
+          prettyResult = `+${Math.round(10000*expectedValue)/100}`
+        } else {
+          prettyResult = `${Math.round(10000*expectedValue)/100}`
+        }
         console.log(`about to write: ${expectedValue}`);
-        document.getElementById("result").value = Math.random();
-        console.log('written');
+        document.getElementById("result").text = prettyResult;
       }
     </script>
   </body>
