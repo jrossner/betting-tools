@@ -3,6 +3,7 @@
   <head>
   </head>
   <body>
+    <a href='./index.html'>Back Home</a>
     <h1 style="text-align:center;">Expected Value Calculator</h1>
     <p>
       <h2>About</h2>
@@ -19,7 +20,9 @@
         <input type="number" id="outcomeprob" name="outcomeprob" min="0" max="1" step=".01" value=".5">
         <br>
         <input type="submit" value="Calculate Expected Value">
+        <output name="result" for="res">20</output>
       </form>
+      <
     </p>
     <script>
       function calcExpValue() {
@@ -37,7 +40,7 @@
         }
 
         expectedValue = (profitMultiple * winProb) - loseProb;
-  
+        document.getElementById("result").innerHTML = 5 + 6;
         if (expectedValue > 0) {
           alert(`You may have found a profitable bet!\n The Expected Value is +${math.Round(10000*expectedValue)/100}%`);
         } else {
