@@ -70,7 +70,7 @@ def getTodayProbableStarters():
                              "BApIP": None,
                              "ERpIP": None}
     
-        game_matchup = pd.DataFrame({"Matchup": matchup,
+        game_matchup = {"Matchup": matchup,
                             "Away SP": away_sp,
                             "Away SP Total IP": away_sp_stats['Total IP'],
                             "Away SP BApIP": away_sp_stats['BApIP'],
@@ -78,9 +78,9 @@ def getTodayProbableStarters():
                             "Home SP": home_sp,
                             "Home SP Total IP": home_sp_stats['Total IP'],
                             "Home SP BApIP": home_sp_stats['BApIP'],
-                            "Home SP ERpIP": home_sp_stats['ERpIP']})
+                            "Home SP ERpIP": home_sp_stats['ERpIP']}
         
-        slate = pd.concat([slate, game_matchup], ignore_index = True)
+        slate = pd.concat([slate, pd.DataFrame([game_matchup])], ignore_index = True)
         
     return slate
 
