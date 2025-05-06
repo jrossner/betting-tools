@@ -26,4 +26,4 @@ jobs:
           python -m pip install datetime
       - name: execute python script
           
-        run: python projects/graphics/mlb bapip/probables today/saveTodaysProbableSPsBAPIPs.py
+        run: python BAPIP/Schedule Today/saveTodaysProbableSPsBAPIPs.py
