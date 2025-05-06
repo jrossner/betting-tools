@@ -89,4 +89,6 @@ def outputSlate(dfrm):
     dfi.export(dfrm,'today_schedule.png')
 
 # execute
+print('executing')
 outputSlate(getTodayProbableStarters())
+print('output expected...')
