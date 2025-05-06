@@ -70,7 +70,7 @@ def getTodayProbableStarters():
                              "BApIP": None,
                              "ERpIP": None}
     
-        game_matchup = pd.DataFrane({"Matchup": matchup,
+        game_matchup = pd.DataFrame({"Matchup": matchup,
                             "Away SP": away_sp,
                             "Away SP Total IP": away_sp_stats['Total IP'],
                             "Away SP BApIP": away_sp_stats['BApIP'],
