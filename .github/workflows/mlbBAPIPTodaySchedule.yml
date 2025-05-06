@@ -1,0 +1,29 @@
+name: bapip-mlb-today-schedule-probables
+
+on:
+  schedule: 
+    - cron: '00 14 * * *'
+    - cron: '00 16 * * *'
+    - cron: '00 18 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install dataframe_image
+          python -m pip install pandas
+          python -m pip install statsapi
+          python -m pip install datetime
+      - name: execute python script
+          
+        run: python projects/graphics/mlb bapip/probables today/saveTodaysProbableSPsBAPIPs.py
