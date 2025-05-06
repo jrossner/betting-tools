@@ -69,8 +69,8 @@ def getTodayProbableStarters():
                              "Total IP": None,
                              "BApIP": None,
                              "ERpIP": None}
-        
-        slate = slate.append({"Matchup": matchup,
+    
+        game_matchup = pd.DataFrane({"Matchup": matchup,
                             "Away SP": away_sp,
                             "Away SP Total IP": away_sp_stats['Total IP'],
                             "Away SP BApIP": away_sp_stats['BApIP'],
@@ -79,6 +79,8 @@ def getTodayProbableStarters():
                             "Home SP Total IP": home_sp_stats['Total IP'],
                             "Home SP BApIP": home_sp_stats['BApIP'],
                             "Home SP ERpIP": home_sp_stats['ERpIP']})
+        
+        slate = pd.concat([slate, game_matchup], ignore_index = True)
         
     return slate
 
