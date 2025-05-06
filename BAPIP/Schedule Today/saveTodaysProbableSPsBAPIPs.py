@@ -84,7 +84,7 @@ def getTodayProbableStarters():
 
 def outputSlate(dfrm):
     #df_styled = df.style.background_gradient() #adding a gradient based on values in cell
-    dfi.export(dfrm,"../today_schedule.png")
+    dfi.export(dfrm,'today_schedule.png")
 
 # execute
 outputSlate(getTodayProbableStarters())
