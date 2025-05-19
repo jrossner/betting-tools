@@ -27,6 +27,7 @@ jobs:
           python -m pip install pandas
           python -m pip install MLB-StatsAPI
           python -m pip install datetime
+          python -m pip install matplotlib
       - name: execute python script
           
         run: python BAPIP/ScheduleToday/saveTodaysProbableSPsBAPIPs.py
