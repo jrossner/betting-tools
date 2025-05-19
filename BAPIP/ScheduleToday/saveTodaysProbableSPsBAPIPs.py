@@ -85,8 +85,12 @@ def getTodayProbableStarters():
     return slate
 
 def outputSlate(dfrm):
-    max = max(list(dfrm['Away SP BApIP'])+list(dfrm['Home SP BApIP']))
-    min = min(list(dfrm['Away SP BApIP'])+list(dfrm['Home SP BApIP']))
+    try:
+        max = max(list(dfrm['Away SP BApIP'])+list(dfrm['Home SP BApIP']))
+        min = min(list(dfrm['Away SP BApIP'])+list(dfrm['Home SP BApIP']))
+    except:
+        max = 2.5
+        min = 1.5
     #df_styled = df.style.background_gradient() #adding a gradient based on values in cell
     dfi.export(dfrm.style.background_graduent(cmaps='Greens',high=max,low=min,subset=['Away SP BApIP','Home SP BApIP']).applymap(lambda x: 'color: black; background-color: transparent' if pd.isnull(x) else ''),'today_schedule.png')
 
