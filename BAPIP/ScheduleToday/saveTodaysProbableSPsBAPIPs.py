@@ -1,6 +1,7 @@
 import statsapi
 import pandas as pd
 from datetime import datetime as dt
+import matplotlib
 import dataframe_image as dfi
 
 def getPlayerID(fullName: str, szn: int = 2025):
