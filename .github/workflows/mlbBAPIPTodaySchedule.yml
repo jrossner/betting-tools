@@ -1,5 +1,8 @@
 name: bapip-mlb-today-schedule-probables
 
+permissions:
+  contents: write
+
 on:
   schedule: 
     - cron: '00 14 * * *'
